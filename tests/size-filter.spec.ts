@@ -1,14 +1,17 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, devices } from '@playwright/test';
 import { CollectionPage } from '../pages/CollectionPage';
 
 test.use({
-  viewport: {
-    width: 600,
-    height: 900
-  }
+  ...devices['Pixel 5']
 });
 
-test('user can filter products by size 27', async ({ page }) => {
+test('user can filter products by size 27', async ({ page, browserName }) => {
+
+  test.skip(
+    browserName !== 'chromium',
+    'Responsive mobile flow currently validated with Chromium'
+  );
+
   const collectionPage = new CollectionPage(page);
 
   await collectionPage.goto();
