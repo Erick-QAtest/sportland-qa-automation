@@ -10,15 +10,13 @@ export class CollectionPage {
     this.page = page;
 
     this.filterButton = page.getByRole('button', {
-      name: 'Filtro',
-      exact: true
+      name: /^(Filtro|Filter)$/
     });
 
     this.filterDrawer = page.locator('#filters-drawer');
 
     this.showMoreButton = this.filterDrawer.getByRole('button', {
-      name: 'Mostrar más',
-      exact: true
+      name: /^(Mostrar más|Show more)$/
     });
   }
 
