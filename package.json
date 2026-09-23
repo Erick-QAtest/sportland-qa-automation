@@ -1,5 +1,5 @@
 {
-  "name": "playwright-learning",
+  "name": "sportland-qa",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
@@ -9,6 +9,6 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.4.1"
   }
 }
