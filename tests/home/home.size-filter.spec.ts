@@ -93,10 +93,14 @@ for (const rule of sizeRules) {
       const url =
         new URL(page.url());
 
+      // Accept locale prefixes such as:
+      // /collections/...
+      // /en-us/collections/...
+      // /es-mx/collections/...
       expect(
         url.pathname
-      ).toBe(
-        '/collections/disponible-para-envio-inmediato'
+      ).toMatch(
+        /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?collections\/disponible-para-envio-inmediato$/
       );
 
       expect(
